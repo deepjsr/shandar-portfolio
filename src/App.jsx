@@ -3,10 +3,14 @@ import "./index.css";
 import LoadingScreen from "./components/Loading";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
+import MobileMenue from "./components/MobileMenue";
+import Home from "./components/sections/Home";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}{" "}
@@ -15,7 +19,9 @@ function App() {
           isLoading ? "opacity-0" : "opacity-100"
         } bg-black text-gray-100`}
       >
-        <Navbar />
+        <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <MobileMenue isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <Home />
       </div>
     </>
   );
