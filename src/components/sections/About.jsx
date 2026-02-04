@@ -2,25 +2,13 @@ import React from "react";
 import RevealOnScroll from "../RevealOnScroll";
 
 function About() {
-  // const skills = [
-  //   "JavaScript",
-  //   "React",
-  //   "Node.js",
-  //   "Python",
-  //   "HTML",
-  //   "CSS",
-  //   "Tailwind CSS",
-  //   "Bootstrap",
-  //   "Git",
-  //   "GitHub",
-  // ];
-
   const frontendSkills = [
     "JavaScript",
     "React",
     "HTML",
     "CSS",
     "Tailwind CSS",
+    "Wordpress",
     "Bootstrap",
   ];
   const backendSkills = ["Node.js", "Express", "Java", "SpringBoot"];
@@ -35,14 +23,26 @@ function About() {
             About Me
           </h2>
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300  md:text-2xl mb-6">
-              I'm a software engineer with a passion for building web
-              applications. I love to learn new technologies and improve my
-              skills. I am always looking for new challenges and opportunities
-              to grow. I have experience in various programming languages and
-              frameworks, including JavaScript, React, Node.js, and Python. I
-              enjoy working on projects that have a positive impact on people's
-              lives and contribute to the open-source community.
+            <p className="text-gray-300  md:text-2xl mb-4">
+              I’m a frontend developer focused on building fast, reliable, and
+              user-centric React applications for real-world use.
+            </p>
+            <p className="text-gray-300 md:text-2xl mt-4">
+              My work focuses on:
+            </p>
+            <ul className="list-disc pl-4 mt-2 list-inside text-gray-300">
+              <li>Performance optimization (LCP, CLS, Lighthouse audits)</li>
+              <li>Clean, maintainable component architecture</li>
+              <li>Responsive UI with modern CSS and animations</li>
+              <li>
+                Production deployments using Vite and Netlify and CI-ready
+                setups
+              </li>
+            </ul>
+            <p className="text-gray-300 md:text-2xl mt-4">
+              I prefer shipping complete solutions over demos — debugging slow
+              pages, refactoring animation-heavy components, and improving SEO
+              structure to make products usable and discoverable.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
@@ -72,7 +72,7 @@ function About() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-2 gap-6">
               <div className="rounded-xl p-6 hover:-translate-y-1 transsition-all">
                 <h3 className="text-xl font-bold mb-4">Education</h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -87,7 +87,7 @@ function About() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl p-6 border-white/10 hover:-translate-y-1 transsition-all">
+              {/* <div className="rounded-xl p-6 border-white/10 hover:-translate-y-1 transsition-all">
                 <h3 className="text-xl font-bold mb-4">Experience</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="">
@@ -100,7 +100,7 @@ function About() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

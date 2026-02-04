@@ -10,16 +10,16 @@ function Home() {
       <RevealOnScroll>
         <div className="text-center px-4 z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
-            Hi, I'm <span className="text-blue-500">DJS</span>
+            Hi, I'm <span className="text-blue-500">Deep</span>
           </h1>
-          <p
-            className="text-gray-400 text-lg overflow-auto md:text-2xl  mb-8
-          max-w-lg mx-auto"
-          >
-            I'm a software engineer with a passion for building web
-            applications. I love to learn new technologies and improve my
-            skills. I am always looking for new challenges and opportunities to
-            grow.
+          <p className="text-gray-400 text-lg overflow-auto md:text-2xl  mb-8">
+            Frontend Developer focused on performance, reliability, and
+            real-world delivery
+          </p>
+          <p className="text-gray-700 text-lg overflow-auto md:text-2xl  mb-10 max-w-lg mx-auto">
+            I help teams ship production-ready React applications with clean UI,
+            measurable improvements in speed and stability, and scalable
+            frontend architecture.
           </p>
           <div className="flex-center px-4 space-x-4 md:space-x-8">
             <a
