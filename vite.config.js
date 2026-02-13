@@ -14,8 +14,8 @@ export default defineConfig({
     }),
   ],
 
-  //  FOR CUSTOM DOMAIN
-  base: "/",
+  // GitHub Pages subdirectory
+  base: "/shandar-portfolio/",
 
   build: {
     rollupOptions: {
