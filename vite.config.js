@@ -15,7 +15,10 @@ export default defineConfig({
   ],
 
   // GitHub Pages subdirectory
-  base: "/shandar-portfolio/",
+  // base: "/shandar-portfolio/",
+
+  //deep-dev.in base 
+  base: "/",
 
   build: {
     rollupOptions: {
