@@ -19,7 +19,6 @@ export default defineConfig({
 
   //deep-dev.in base 
   base: "/",
-
   build: {
     rollupOptions: {
       output: {
