@@ -1,181 +1,154 @@
+
 import React from "react";
+import { motion } from "framer-motion";
 import RevealOnScroll from "../RevealOnScroll";
 
 function Projects() {
+  const projects = [
+    {
+      title: "About React on Reddit",
+      description: "A React-based application that aggregates and displays React-related discussions from Reddit with a clean, component-driven UI.",
+      features: [
+        "Built with React and Redux for predictable state management",
+        "Integrated Firebase for authentication and data handling",
+        "Focused on reusable components and clean UI structure"
+      ],
+      tech: ["React", "Redux", "Firebase"],
+      link: "https://redit-react-posts.web.app/",
+      color: "cyan"
+    },
+    {
+      title: "Crypto Trading Platform – UI Prototype",
+      description: "A frontend-focused prototype built with WordPress to explore layout, content structure, and user flow for a crypto trading interface.",
+      features: [
+        "Designed responsive pages with clear visual hierarchy",
+        "Structured dashboards, pricing, and informational sections",
+        "Focused purely on UI/UX, not backend trading logic"
+      ],
+      tech: ["WordPress", "Elementor", "Royal Addons"],
+      link: "https://deeps.page.gd/",
+      color: "purple"
+    },
+    {
+      title: "E-Commerce Platform",
+      description: "A frontend e-commerce application demonstrating product listings, authentication flow, and responsive layouts.",
+      features: [
+        "Implemented product browsing and UI state handling",
+        "Integrated Firebase for authentication and data storage",
+        "Focused on usability and mobile responsiveness"
+      ],
+      tech: ["React", "Vite", "Tailwind CSS"],
+      link: "https://i-shopful.web.app/",
+      color: "cyan"
+    },
+    {
+      title: "Jainshree DIGITAL – Performance-Optimized Landing Page",
+      description: "A single-page digital agency website focused on performance, clean UI, and production-ready deployment.",
+      features: [
+        "Built with React and Vite for fast builds",
+        "Improved Lighthouse metrics (LCP, CLS, layout stability)",
+        "Reduced bundle size and deferred non-critical assets",
+        "Implemented performance-aware animations"
+      ],
+      tech: ["React", "Vite", "Netlify", "Tailwind CSS"],
+      link: "https://jainshree-digital.netlify.app/",
+      color: "purple"
+    }
+  ];
+
   return (
     <section
-      id="projects"
-      className="min-h-screen flex items-center justify-center py-20"
+      id="Projects"
+      className="min-h-screen py-20 relative overflow-hidden bg-[#05050A]"
     >
+      {/* Subtle Aurora Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 30% 40%, #00F5FF 10%, transparent 70%)",
+            filter: "blur(120px)",
+            opacity: 0.12,
+          }}
+          animate={{ scale: [1, 1.1, 1], x: [0, 30, -25, 0] }}
+          transition={{ duration: 32, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 70% 65%, #A855F7 12%, transparent 72%)",
+            filter: "blur(110px)",
+            opacity: 0.10,
+          }}
+          animate={{ scale: [1, 0.95, 1.08], y: [0, -35, 30, 0] }}
+          transition={{ duration: 38, repeat: Infinity, ease: "easeInOut", delay: -16 }}
+        />
+      </div>
+
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent text-center"
+          >
             Featured Projects
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Project 1 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] transition">
-              <h3 className="text-xl font-bold mb-2">About React on Reddit</h3>
-
-              <p className="text-gray-400 mb-4">
-                A React-based application that aggregates and displays
-                React-related discussions from Reddit with a clean,
-                component-driven UI.
-              </p>
-
-              <ul className="text-gray-400 mb-4 ml-5 list-disc">
-                <li>
-                  Built with React and Redux for predictable state management
-                </li>
-                <li>
-                  Integrated Firebase for authentication and data handling
-                </li>
-                <li>Focused on reusable components and clean UI structure</li>
-              </ul>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Redux", "Firebase"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href="https://redit-react-posts.web.app/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-4"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group bg-[#111111]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400/30 transition-all duration-300"
               >
-                View Project →
-              </a>
-            </div>
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors">
+                  {project.title}
+                </h3>
 
-            {/* Project 2 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Crypto Trading Platform – UI Prototype
-              </h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {project.description}
+                </p>
 
-              <p className="text-gray-400 mb-4">
-                A frontend-focused prototype built with WordPress to explore
-                layout, content structure, and user flow for a crypto trading
-                interface.
-              </p>
+                <div className="mb-6">
+                  <ul className="space-y-2 text-gray-400 text-sm">
+                    {project.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-cyan-400 mt-1.5">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <ul className="text-gray-400 mb-4 ml-5 list-disc">
-                <li>Designed responsive pages with clear visual hierarchy</li>
-                <li>
-                  Structured dashboards, pricing, and informational sections
-                </li>
-                <li>Focused purely on UI/UX, not backend trading logic</li>
-                <li>Used WordPress theming to rapidly prototype concepts</li>
-              </ul>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["WordPress", "Elementor", "Royal Addons"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href="https://deeps.page.gd/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-4"
-              >
-                View Project →
-              </a>
-            </div>
-
-            {/* Project 3 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] transition">
-              <h3 className="text-xl font-bold mb-2">E-Commerce Platform</h3>
-
-              <p className="text-gray-400 mb-4">
-                A frontend e-commerce application demonstrating product
-                listings, authentication flow, and responsive layouts.
-              </p>
-
-              <ul className="text-gray-400 mb-4 ml-5 list-disc">
-                <li>Implemented product browsing and UI state handling</li>
-                <li>Integrated Firebase for authentication and data storage</li>
-                <li>Focused on usability and mobile responsiveness</li>
-              </ul>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Vite", "Tailwind CSS"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href="https://i-shopful.web.app/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-4"
-              >
-                View Project →
-              </a>
-            </div>
-
-            {/* Project 4 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_8px_24px_rgba(59,130,246,0.12)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Jainshree DIGITAL – Performance-Optimized Landing Page
-              </h3>
-
-              <p className="text-gray-400 mb-4">
-                A single-page digital agency website focused on performance,
-                clean UI, and production-ready deployment.
-              </p>
-
-              <ul className="text-gray-400 mb-4 ml-5 list-disc">
-                <li>Built with React and Vite for fast builds</li>
-                <li>
-                  Improved Lighthouse metrics (LCP, CLS, layout stability)
-                </li>
-                <li>Reduced bundle size and deferred non-critical assets</li>
-                <li>Implemented performance-aware animations</li>
-                <li>Deployed using a production-optimized Netlify setup</li>
-              </ul>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Vite", "Netlify", "Tailwind CSS"].map(
-                  (tech, key) => (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.tech.map((tech, i) => (
                     <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm"
+                      key={i}
+                      className={`px-4 py-1.5 rounded-full text-xs font-medium border ${project.color === "cyan"
+                        ? "bg-cyan-500/10 text-cyan-400 border-cyan-400/30"
+                        : "bg-purple-500/10 text-purple-400 border-purple-400/30"
+                        }`}
                     >
                       {tech}
                     </span>
-                  ),
-                )}
-              </div>
+                  ))}
+                </div>
 
-              <a
-                href="https://jainshree-digital.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block text-blue-400 hover:text-blue-300 transition-colors mt-4"
-              >
-                View Project →
-              </a>
-            </div>
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors group-hover:underline"
+                >
+                  View Live Project →
+                </motion.a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </RevealOnScroll>
