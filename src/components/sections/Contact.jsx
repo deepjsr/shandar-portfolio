@@ -36,7 +36,8 @@ export const Contact = () => {
   return (
     <section
       id="Contact"
-      className="min-h-screen py-20 relative overflow-hidden bg-[#05050A]"
+      // className="min-h-screen py-20 relative overflow-hidden bg-[#05050A] "
+      className="pt-0 pb-20 relative overflow-hidden bg-[#05050A] "
     >
       {/* Subtle Aurora Background (consistent with Home) */}
       <div className="absolute inset-0 pointer-events-none">

@@ -59,7 +59,9 @@ function Projects() {
   return (
     <section
       id="Projects"
-      className="min-h-screen py-20 relative overflow-hidden bg-[#05050A]"
+      // className="min-h-screen py-20 relative overflow-hidden bg-[#05050A]"
+      className="pt-20 pb-20 relative overflow-hidden bg-[#05050A] "
+
     >
       {/* Subtle Aurora Background */}
       <div className="absolute inset-0 pointer-events-none">

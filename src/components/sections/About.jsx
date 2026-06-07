@@ -56,7 +56,9 @@ function About() {
             {/* Main Bio Card */}
             <motion.div
               whileHover={{ y: -4 }}
-              className="bg-[#111111]/80 backdrop-blur-xl border glass glass-hover rounded-3xl p-8 md:p-12 border-white/10"
+              // className="bg-[#111111]/80 backdrop-blur-xl border glass glass-hover rounded-3xl p-8 md:p-12 border-white/10"
+              className="pt-0 pb-20 relative overflow-hidden bg-[#05050A] "
+
             >
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
                 I’m a frontend developer focused on building fast, reliable, and user-centric React applications for real-world use.

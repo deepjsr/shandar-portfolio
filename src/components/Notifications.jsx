@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 function Notifications() {
-  const tickerText = "All resources used • Keep Tuning for latest updates... • Upcoming… More animations • Resource section";
+  const tickerText = "Keep Tuning for latest updates... • Upcoming… More animations • Resource section";
 
   return (
     <div className="w-full overflow-hidden bg-[#0A0A0A] border-y border-white/10 py-3">

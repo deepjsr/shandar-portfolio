@@ -11,7 +11,7 @@ function RevealOnScroll({ children }) {
         }
       },
       {
-        threshold: 0.2,
+        threshold: 0.1,
         rootMargin: "0px 0px -60% 0px",
       }
     );

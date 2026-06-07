@@ -20,10 +20,11 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
   return (
     <nav className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${scrolled ? 'scale-[0.97]' : ''}`}>
       <div
-        className={`glass flex items-center gap-8 px-8 py-4 rounded-full border transition-all duration-300 ${scrolled
+        className={`bg-white/5 backdrop-blur-md  flex items-center gap-8 px-8 py-4 rounded-full border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 ${scrolled
           ? 'bg-[#0A0A0A]/95 border-white/20 shadow-2xl'
           : 'bg-black/70 border-white/10'
           }`}
+      // className="bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-white/10 hover:border-cyan-400/30 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
       >
         {/* Signature Logo with Glow & Hover */}
         {/* <a

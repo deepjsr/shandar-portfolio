@@ -16,7 +16,7 @@ Frontend developer focused on building clean, responsive user interfaces.
 
 ## 🌐 Live Demo
 
-https://deepjsr.github.io/shandar-portfolio/
+https://deep-dev.in/
 
 ## 📌 Features
 
