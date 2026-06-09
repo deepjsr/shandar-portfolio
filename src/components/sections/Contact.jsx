@@ -36,8 +36,8 @@ export const Contact = () => {
   return (
     <section
       id="Contact"
-      // className="min-h-screen py-20 relative overflow-hidden bg-[#05050A] "
-      className="pt-0 pb-20 relative overflow-hidden bg-[#05050A] "
+      className="min-h-screen py-20 relative overflow-hidden bg-[#05050A] "
+    // className="pt-0 pb-20 relative overflow-hidden bg-[#05050A] "
     >
       {/* Subtle Aurora Background (consistent with Home) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -137,7 +137,7 @@ export const Contact = () => {
           <div className="mt-10 text-center text-gray-400 text-sm">
             Or reach me directly at{" "}
             <a href="mailto:your.email@example.com" className="text-cyan-400 hover:underline">
-              your.email@example.com
+              sarma.d3e@gmail.com
             </a>
           </div>
         </div>

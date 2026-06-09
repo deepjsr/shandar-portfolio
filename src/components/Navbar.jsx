@@ -62,7 +62,7 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
         <div className="hidden md:flex items-center gap-9 text-sm font-medium text-gray-300">
           <a href="#Home" className="hover:text-white transition-colors">Home</a>
           <a href="#About" className="hover:text-white transition-colors">About</a>
-          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+          <a href="#Projects" className="hover:text-white transition-colors">Projects</a>
           <a href="#Contact" className="hover:text-white transition-colors">Contact</a>
         </div>
 

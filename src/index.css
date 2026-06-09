@@ -23,13 +23,14 @@ body {
 /* ==================== Smooth Scrolling ==================== */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-  /* Adjust if your navbar height changes */
 }
 
 /* Better section spacing with navbar */
 section {
   scroll-margin-top: 80px;
+
+  /* Adds actual visual buffer space so content never touches the header edges */
+  padding-top: 5rem;
 }
 
 /* ==================== Custom Animations ==================== */
@@ -53,17 +54,51 @@ section {
 
 /* Reveal Animation */
 .reveal {
+  /* Establish strict baseline parameters before the animation begins */
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform;
+  scale: 0.95;
+  translate: 0 4rem;
+  filter: saturate(0) contrast(1.5) brightness(0.2) blur(15px);
+
+  /* Set up the animation assignment */
+  animation: reveal-visible linear both;
+
+  /* Force tracking relative to the nearest block-scrolling container */
+  animation-timeline: view(block);
+
+  /* CRITICAL FIX: Start the animation the exact millisecond the top of the card 
+    touches the bottom viewport boundary (entry 0%), and finish it when it reaches 
+    30% up the screen. This eliminates the "pop".
+  */
+  animation-range: entry 0% contain 30%;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes reveal-visible {
+  from {
+    opacity: 0;
+    scale: 0.95;
+    translate: 0 4rem;
+    filter: saturate(0) contrast(1.5) brightness(0.2) blur(15px);
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: saturate(1) contrast(1) brightness(1) blur(0px);
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: none;
+  }
+}
+
 
 /* Accessibility fallback */
 @media (prefers-reduced-motion: reduce) {
@@ -73,12 +108,22 @@ section {
   }
 }
 
+/* If the user's browser does NOT support scroll-driven timelines, show the content by default */
+@supports not (animation-timeline: view()) {
+  .reveal {
+    opacity: 1 !important;
+    scale: 1 !important;
+    translate: 0 0 !important;
+    filter: none !important;
+  }
+}
+
 /* Remove any unwanted grid backgrounds */
-body,
+/* body,
 div,
 section {
   background-image: none !important;
-}
+} */
 
 /* ==================== Glassmorphism Utility ==================== */
 
@@ -86,8 +131,8 @@ section {
 
   .glass {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }

@@ -27,7 +27,7 @@ function Notifications() {
             initial={{ x: "0%" }}
             animate={{ x: "-50%" }}
             transition={{
-              duration: 32,
+              duration: 42,
               repeat: Infinity,
               ease: "linear",
             }}

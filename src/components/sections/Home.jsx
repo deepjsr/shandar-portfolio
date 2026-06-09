@@ -48,7 +48,7 @@ function Home() {
 
       {/* Main Content */}
       <RevealOnScroll>
-        <div className="text-center px-6 relative z-10 max-w-4xl mx-auto">
+        <div className="text-center px-6 mb-24 relative z-10 max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ function Home() {
             measurable improvements in speed and stability, and scalable frontend architecture.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 mt-9 justify-center items-center">
             <motion.a
               href="#Projects"
               whileHover={{ scale: 1.05 }}
@@ -90,7 +90,7 @@ function Home() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-cyan-400/70 text-sm tracking-[3px] flex flex-col items-center z-10"
+        className="absolute bottom-5 mt-9 left-1/2 -translate-x-1/2 text-cyan-400/70 text-sm tracking-[3px] flex flex-col items-center z-10"
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 2.6, repeat: Infinity }}
       >

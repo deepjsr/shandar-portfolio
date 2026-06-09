@@ -31,8 +31,12 @@ function App() {
     <>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
-      <div
+      {/* <div
         className={`min-h-screen bg-[#05050A] text-gray-100 transition-opacity duration-700 ${isLoading ? "opacity-0" : "opacity-100"
+          }`}
+      > */}
+      <div
+        className={`w-full min-h-screen bg-[#05050A] text-gray-100 transition-opacity duration-700 isolation-auto ${isLoading ? "opacity-0" : "opacity-100"
           }`}
       >
         <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
