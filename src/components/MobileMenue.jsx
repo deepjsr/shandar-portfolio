@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 
 function MobileMenue({ isMenuOpen, setIsMenuOpen }) {
   return (
@@ -66,6 +67,20 @@ function MobileMenue({ isMenuOpen, setIsMenuOpen }) {
              }`}
       >
         Contact
+      </a>
+      <a
+        href="https://github.com/deepjsr"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setIsMenuOpen(false)}
+        className={`flex items-center gap-2 text-2xl font-semibold text-white my-4 transform transition-transform duration-300 hover:text-cyan-400
+             ${
+               isMenuOpen
+                 ? "opacity-100 tranalate-y-0"
+                 : "opacity-0 translate-y-4"
+             }`}
+      >
+        <FaGithub /> GitHub
       </a>
     </div>
   );

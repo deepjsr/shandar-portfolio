@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 import RevealOnScroll from "../RevealOnScroll";
 
 function Home() {
@@ -83,6 +84,21 @@ function Home() {
               className="border-2 border-white/70 hover:border-cyan-400 text-white hover:text-cyan-400 font-medium py-4 px-10 rounded-2xl text-lg transition-all w-full sm:w-auto"
             >
               Contact Me
+            </motion.a>
+          </div>
+
+          {/* Social Links Row */}
+          <div className="flex justify-center items-center gap-6 mt-10">
+            <motion.a
+              href="https://github.com/deepjsr"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-gray-400 hover:text-cyan-400 text-4xl transition-colors duration-200"
+              aria-label="GitHub Profile"
+            >
+              <FaGithub />
             </motion.a>
           </div>
         </div>

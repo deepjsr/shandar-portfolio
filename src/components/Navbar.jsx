@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import signature from "/assets/sig-1.png";   // ← Change filename if different
 
 function Navbar({ isMenuOpen, setIsMenuOpen }) {
@@ -67,12 +68,23 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
         </div>
 
         {/* Right Side Button */}
-        <a
-          href="#Contact"
-          className="hidden md:block px-7 py-3 bg-white hover:bg-gray-100 text-black font-semibold rounded-full text-sm transition-all active:scale-95 shadow-lg"
-        >
-          Let's Talk
-        </a>
+        <div className="hidden md:flex items-center gap-5">
+          <a
+            href="https://github.com/deepjsr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-white hover:scale-110 active:scale-95 transition-all duration-200 text-2xl"
+            aria-label="GitHub Profile"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="#Contact"
+            className="px-7 py-3 bg-white hover:bg-gray-100 text-black font-semibold rounded-full text-sm transition-all active:scale-95 shadow-lg"
+          >
+            Let's Talk
+          </a>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
