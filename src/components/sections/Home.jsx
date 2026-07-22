@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -9,14 +9,15 @@ function Home() {
   return (
     <section
       id="Home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#05050A]"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-50 dark:bg-[#05050A]"
     >
       {/* Controlled Aurora Background */}
       {/* Layer 1: Cyan */}
       <motion.div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at 25% 60%, #00F5FF 12%, #22D3EE 38%, transparent 72%)",
+          background:
+            "radial-gradient(ellipse at 25% 60%, #00F5FF 12%, #22D3EE 38%, transparent 72%)",
           filter: "blur(100px) saturate(1.3)",
           opacity: 0.22,
         }}
@@ -32,39 +33,50 @@ function Home() {
       <motion.div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse at 78% 72%, #A855F7 10%, #7C3AED 40%, transparent 75%)",
+          background:
+            "radial-gradient(ellipse at 78% 72%, #A855F7 10%, #7C3AED 40%, transparent 75%)",
           filter: "blur(115px) saturate(1.2)",
-          opacity: 0.20,
+          opacity: 0.2,
         }}
         animate={{
           x: [0, -60, 50, 0],
           y: [0, 45, -35, 0],
           scale: [1, 0.93, 1.12, 1],
         }}
-        transition={{ duration: 34, repeat: Infinity, ease: "easeInOut", delay: -12 }}
+        transition={{
+          duration: 34,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: -12,
+        }}
       />
 
       {/* Strong Dark Overlay for Excellent Readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#05050A]/95 via-[#05050A]/80 to-[#05050A]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 via-gray-50/80 to-gray-50/90 dark:from-[#05050A]/95 dark:via-[#05050A]/80 dark:to-[#05050A]/90" />
 
       {/* Main Content */}
       <RevealOnScroll>
-        <div className="text-center px-6 mb-24 relative z-10 max-w-4xl mx-auto">
+        <div className="text-center px-6 mb-23 relative z-10 max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-7xl font-bold mb-6 text-white tracking-tighter"
+            className="text-6xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white tracking-tighter"
           >
-            Hi, I'm <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">Deep</span>
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-cyan-300 dark:to-blue-400 bg-clip-text text-transparent">
+              Deep
+            </span>
           </motion.h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-6 font-light max-w-2xl mx-auto">
-            Frontend Developer focused on performance, reliability, and real-world delivery
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 font-light max-w-2xl mx-auto">
+            Frontend Developer focused on performance, reliability, and
+            real-world delivery
           </p>
 
-          <p className="text-gray-400 text-base md:text-lg mb-12 max-w-lg mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg mb-12 max-w-lg mx-auto leading-relaxed">
             I help teams ship production-ready React applications with clean UI,
-            measurable improvements in speed and stability, and scalable frontend architecture.
+            measurable improvements in speed and stability, and scalable
+            frontend architecture.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-9 justify-center items-center">
@@ -72,7 +84,7 @@ function Home() {
               href="#Projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold py-4 px-10 rounded-2xl text-lg transition-all shadow-xl shadow-cyan-500/50 w-full sm:w-auto"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white dark:text-black font-semibold py-4 px-10 rounded-2xl text-lg transition-all shadow-xl shadow-cyan-500/50 w-full sm:w-auto"
             >
               View My Projects
             </motion.a>
@@ -81,24 +93,9 @@ function Home() {
               href="#Contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="border-2 border-white/70 hover:border-cyan-400 text-white hover:text-cyan-400 font-medium py-4 px-10 rounded-2xl text-lg transition-all w-full sm:w-auto"
+              className="border-2 border-gray-900/70 dark:border-white/70 hover:border-cyan-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 font-medium py-4 px-10 rounded-2xl text-lg transition-all w-full sm:w-auto"
             >
               Contact Me
-            </motion.a>
-          </div>
-
-          {/* Social Links Row */}
-          <div className="flex justify-center items-center gap-6 mt-10">
-            <motion.a
-              href="https://github.com/deepjsr"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.15, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-gray-400 hover:text-cyan-400 text-4xl transition-colors duration-200"
-              aria-label="GitHub Profile"
-            >
-              <FaGithub />
             </motion.a>
           </div>
         </div>
@@ -106,7 +103,7 @@ function Home() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-5 mt-9 left-1/2 -translate-x-1/2 text-cyan-400/70 text-sm tracking-[3px] flex flex-col items-center z-10"
+        className="absolute bottom-5 mt-19 ./-translate-x-1/2 text-cyan-400/70 text-sm tracking-[3px] flex flex-col items-center z-10"
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 2.6, repeat: Infinity }}
       >

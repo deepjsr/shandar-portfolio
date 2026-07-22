@@ -2,5 +2,16 @@
   "status": "commited",
   "type": "frontend",
   "scope": "codebase",
-  "localEndpoint": "http://localhost:5173"
+  "localEndpoint": "http://localhost:5173",
+  "executionArgs": {
+    "projectName": "shandar-portfolio",
+    "projectPath": "e:\\start_01\\from_web\\shandar-portfolio",
+    "testIds": [],
+    "additionalInstruction": "",
+    "serverMode": "production",
+    "envs": {
+      "API_KEY": "sk-user-TkN4gvV-A5nfn5jSVBHhvuevhQRkNTmm7eKYcYtZ_vwM1usjKE5KSSbFBg9EXNAg-EF6gJPxQKjxJH7ADApGiET4koVFsWK6BIf611hpCl5VpxMLmbAUXCR7tckwZEezMfE"
+    }
+  },
+  "serverPort": 60819
 }

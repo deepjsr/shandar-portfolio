@@ -1,67 +1,37 @@
 version: "2"
 type: frontend
 tech_stack:
-  - HTML
-  - JavaScript
   - React
+  - Vite
   - Tailwind CSS
   - Framer Motion
-  - react-icons
 routes:
   - path: /
     file: src/App.jsx
     auth_required: false
-    description: Main single-page portfolio application.
+    description: Portfolio main page
 features:
   - name: Navigation
-    description: Sticky floating Navbar with links to sections and a mobile hamburger menu.
+    description: Navigate to different sections of the portfolio (Home, About, Projects, Contact)
     files:
       - src/components/Navbar.jsx
       - src/components/MobileMenue.jsx
     entry_route: /
     user_interactions:
-      - Click navigation links (Home, About, Projects, Contact) to scroll to sections
-      - Toggle hamburger button to open/close mobile menu
-      - Click external GitHub profile icon to open profile page
-    auth_required: false
-  - name: Home Hero Section
-    description: Introduction of Deep with glowing aurora gradient animations, call-to-actions, and social links.
-    files:
-      - src/components/sections/Home.jsx
-    entry_route: /
-    user_interactions:
-      - Click "View My Projects" to scroll to Projects section
-      - Click "Contact Me" to scroll to Contact section
-      - Click GitHub icon to open user's GitHub profile
-    auth_required: false
-  - name: About Me and Skills
-    description: Education details, technical skillset tags (Frontend & Backend), and focus areas.
-    files:
-      - src/components/sections/About.jsx
-    entry_route: /
-    user_interactions:
-      - Hover over skillset cards and badges for subtle scale animations
-    auth_required: false
-  - name: Projects Showcase
-    description: Responsive grid of card layouts representing personal and professional projects with links.
-    files:
-      - src/components/sections/Projects.jsx
-    entry_route: /
-    user_interactions:
-      - Hover over project cards to trigger translate hover effect
-      - Click "View Live Project" to open external deploy links in a new tab
+      - Click on navigation links
+      - Scroll through sections
     auth_required: false
   - name: Contact Form
-    description: Contact form allowing visitors to send emails using Web3Forms integration.
+    description: Submit a message through the contact form using Web3Forms
     files:
       - src/components/sections/Contact.jsx
     entry_route: /
     user_interactions:
-      - Fill in Name input field
-      - Fill in Email input field
-      - Fill in Message textarea field
-      - Click "Send Message" to submit the form
-      - View success or failure notification toasts
+      - Fill name input field
+      - Fill email input field
+      - Fill message textarea
+      - Click Send Message button to submit
+      - See success or error toast notification
     api_calls:
       - method: POST
         endpoint: https://api.web3forms.com/submit

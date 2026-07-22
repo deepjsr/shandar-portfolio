@@ -2,21 +2,33 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaWordpress, FaBootstrap } from "react-icons/fa";
+import { SiJavascript, SiTailwindcss, SiExpress, SiSpringboot } from "react-icons/si";
 import RevealOnScroll from "../RevealOnScroll";
 
 function About() {
   const frontendSkills = [
-    "JavaScript", "React", "HTML", "CSS", "Tailwind CSS",
-    "WordPress", "Bootstrap"
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "HTML", icon: <FaHtml5 /> },
+    { name: "CSS", icon: <FaCss3Alt /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "WordPress", icon: <FaWordpress /> },
+    { name: "Bootstrap", icon: <FaBootstrap /> }
   ];
 
-  const backendSkills = ["Node.js", "Express", "Java", "SpringBoot"];
+  const backendSkills = [
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "Express", icon: <SiExpress /> },
+    { name: "Java", icon: <FaJava /> },
+    { name: "SpringBoot", icon: <SiSpringboot /> }
+  ];
 
   return (
 
     <section
       id="About"
-      className="min-h-screen py-20 relative overflow-hidden bg-[#0A0A0A]"
+      className="min-h-screen py-20 relative overflow-hidden bg-white dark:bg-[#0A0A0A]"
     >
       {/* KEEP: Subtle Aurora Backgrounds (Low impact, high aesthetic value) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -53,12 +65,12 @@ function About() {
 
         <div className="space-y-10 md:space-y-16">
           {/* OPTIMIZED: Clean layout card with standard CSS hover via Tailwind utilities */}
-          <div className="bg-[#111111]/80 backdrop-blur-xl border glass glass-hover rounded-3xl p-8 md:p-12 border-white/10 transition-transform duration-300 transform hover:-translate-y-1">
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
+          <div className="bg-gray-50/80 dark:bg-[#111111]/80 backdrop-blur-xl border glass glass-hover rounded-3xl p-8 md:p-12 border-gray-200 dark:border-white/10 transition-transform duration-300 transform hover:-translate-y-1">
+            <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed mb-6">
               I’m a frontend developer focused on building fast, reliable, and user-centric React applications for real-world use.
             </p>
 
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
+            <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
               My work focuses on performance optimization, clean architecture, responsive design, and shipping production-ready solutions.
             </p>
 
@@ -70,9 +82,10 @@ function About() {
                   {frontendSkills.map((skill, i) => (
                     <span
                       key={i}
-                      className="bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 px-5 py-2 rounded-2xl text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:-translate-y-0.5 cursor-default"
+                      className="flex items-center gap-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 px-5 py-2 rounded-2xl text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:-translate-y-0.5 cursor-default"
                     >
-                      {skill}
+                      {skill.icon}
+                      {skill.name}
                     </span>
                   ))}
                 </div>
@@ -85,9 +98,10 @@ function About() {
                   {backendSkills.map((skill, i) => (
                     <span
                       key={i}
-                      className="bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 px-5 py-2 rounded-2xl text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:-translate-y-0.5 cursor-default"
+                      className="flex items-center gap-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 px-5 py-2 rounded-2xl text-sm font-medium transition-all duration-200 transform hover:scale-105 hover:-translate-y-0.5 cursor-default"
                     >
-                      {skill}
+                      {skill.icon}
+                      {skill.name}
                     </span>
                   ))}
                 </div>
@@ -97,9 +111,9 @@ function About() {
 
           {/* Education + Focus Areas Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-[#111111]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-transform duration-300 transform hover:-translate-y-1">
-              <h3 className="text-2xl font-semibold mb-6 text-white">Education</h3>
-              <ul className="space-y-6 text-gray-300">
+            <div className="bg-gray-50/80 dark:bg-[#111111]/80 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-3xl p-8 transition-transform duration-300 transform hover:-translate-y-1">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Education</h3>
+              <ul className="space-y-6 text-gray-700 dark:text-gray-300">
                 <li>
                   <strong className="block text-lg">B.Sc. in Computer Science</strong>
                   Gauhati University (2015 – 2018)
@@ -111,9 +125,9 @@ function About() {
               </ul>
             </div>
 
-            <div className="bg-[#111111]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-transform duration-300 transform hover:-translate-y-1">
-              <h3 className="text-2xl font-semibold mb-6 text-white">What I Focus On</h3>
-              <ul className="space-y-4 text-gray-300 list-none">
+            <div className="bg-gray-50/80 dark:bg-[#111111]/80 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-3xl p-8 transition-transform duration-300 transform hover:-translate-y-1">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">What I Focus On</h3>
+              <ul className="space-y-4 text-gray-700 dark:text-gray-300 list-none">
                 {[
                   "Performance optimization (LCP, CLS, Lighthouse)",
                   "Clean & maintainable component architecture",

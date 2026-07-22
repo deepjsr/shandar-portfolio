@@ -1,0 +1,254 @@
+[
+  {
+    "id": "TC001",
+    "title": "Navigate between portfolio sections from the main page",
+    "description": "A visitor can use the page navigation to reach the key portfolio sections and continue browsing the single-page layout.",
+    "category": "Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for the about section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about section is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the projects section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Browse the portfolio by scrolling through sections",
+    "description": "A visitor can scroll through the homepage and see the main sections appear in sequence as they move down the page.",
+    "category": "Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the about or skills content is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Scroll further down the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the projects and contact sections are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Submit the contact form successfully",
+    "description": "A visitor can send a message with valid contact details and see a success notification after submission.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Ada Lovelace"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with ada@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the message field with a brief inquiry about the portfolio"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success notification is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Open a featured project link and continue browsing",
+    "description": "A visitor can review a featured project, open its external link, and return to the portfolio to keep exploring.",
+    "category": "Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the projects section"
+      },
+      {
+        "type": "action",
+        "description": "Click an external link from a featured project"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the project destination opens in a new page or tab context"
+      },
+      {
+        "type": "action",
+        "description": "Return to the portfolio page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the portfolio projects section is still accessible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Use the mobile menu to jump to a section",
+    "description": "A mobile visitor can open the navigation menu and reach a selected portfolio section from the single-page layout.",
+    "category": "Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Resize the viewport to a mobile size"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the mobile menu link for the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the projects section is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC006",
+    "title": "Show validation when the contact form is submitted empty",
+    "description": "A visitor who submits the contact form without required details sees validation feedback instead of a successful submission.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC007",
+    "title": "Show validation when the contact form email is incomplete",
+    "description": "A visitor entering an invalid email address in the contact form receives validation feedback and cannot submit successfully.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Ada Lovelace"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an invalid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the message field with a brief inquiry about the portfolio"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify email validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC008",
+    "title": "Show validation when the contact form message is missing",
+    "description": "A visitor leaving the message field empty sees validation feedback and the form is not accepted.",
+    "category": "Contact Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with Ada Lovelace"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with ada@example.com"
+      },
+      {
+        "type": "action",
+        "description": "Submit the contact form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify message validation feedback is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]
